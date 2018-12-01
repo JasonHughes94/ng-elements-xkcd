@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
-import { XkdcRetrieverService } from './services/xkdc-retriever.service';
+import { xkcdRetrieverService } from './services/xkcd-retriever.service';
 
 
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
@@ -19,7 +19,7 @@ import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
     HttpClientJsonpModule
   ],
   providers: [
-    XkdcRetrieverService
+    xkcdRetrieverService
   ],
   entryComponents: [AppComponent]
 })
@@ -29,7 +29,7 @@ export class AppModule {
   constructor(private injector: Injector) {
     const strategyFactory = new ElementZoneStrategyFactory(AppComponent, this.injector);
     const el = createCustomElement(AppComponent, { injector, strategyFactory });
-    customElements.define('xkdc-comic', el);
+    customElements.define('xkcd-comic', el);
   }
 
   ngDoBootstrap() {}

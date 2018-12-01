@@ -3,16 +3,16 @@ const concat = require('concat');
 
 (async function build() {
   const files = [
-    './dist/ng-elements-xkdc/runtime.js',
-    './dist/ng-elements-xkdc/polyfills.js',
-    './dist/ng-elements-xkdc/scripts.js',
-    './dist/ng-elements-xkdc/main.js'
+    './dist/ng-elements-xkcd/runtime.js',
+    './dist/ng-elements-xkcd/polyfills.js',
+    './dist/ng-elements-xkcd/scripts.js',
+    './dist/ng-elements-xkcd/main.js'
   ];
 
   await fs.ensureDir('elements');
-  await concat(files, './elements/ng-elements-xkdc.js');
+  await concat(files, './elements/ng-elements-xkcd.js');
   await fs.copyFile(
-    './dist/ng-elements-xkdc/styles.css',
+    './dist/ng-elements-xkcd/styles.css',
     './elements/styles.css'
   )
 })();

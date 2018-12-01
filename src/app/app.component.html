@@ -1,5 +1,5 @@
 <div class="container" *ngIf="comic">
-  <p class="title">xkdc # {{ comic.num }} - {{ comic.title }}</p>
+  <p class="title">xkcd # {{ comic.num }} - {{ comic.title }}</p>
   <p class="date">Published = {{ formattedDate() }}</p>
   <a href="{{linkUrl()}}"><img src="{{comic.img}}" alt="{{comic.alt}}"></a>
 </div>

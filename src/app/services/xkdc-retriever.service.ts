@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { XkdcComic } from '../models/xkdc-comic';
+import { xkcdComic } from '../models/xkcd-comic';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
-export class XkdcRetrieverService {
+export class xkcdRetrieverService {
   constructor(private httpClient: HttpClient) { }
 
-  get(comicNumber: string | undefined): Observable<XkdcComic> {
+  get(comicNumber: string | undefined): Observable<xkcdComic> {
     console.log(comicNumber);
     const url = `http://dynamic.xkcd.com/api-0/jsonp/comic/${comicNumber}`;
 

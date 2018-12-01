@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { XkdcComic } from './models/xkdc-comic';
-import { XkdcRetrieverService } from './services/xkdc-retriever.service';
+import { xkcdComic } from './models/xkcd-comic';
+import { xkcdRetrieverService } from './services/xkcd-retriever.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,10 @@ import { XkdcRetrieverService } from './services/xkdc-retriever.service';
 export class AppComponent implements OnInit {
 
   @Input() comicNumber: string | undefined = '';
-  comic: XkdcComic;
+  comic: xkcdComic;
 
   constructor(
-    private xkdcComicRetriever: XkdcRetrieverService
+    private xkcdComicRetriever: xkcdRetrieverService
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
   retrieveComic(comicNumber: string | undefined): void {
     console.log(comicNumber);
-    this.xkdcComicRetriever.get(comicNumber).subscribe(comic => {
+    this.xkcdComicRetriever.get(comicNumber).subscribe(comic => {
       this.comic = comic;
     }, error => {
       console.error(error);

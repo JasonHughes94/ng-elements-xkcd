@@ -1,4 +1,4 @@
-export class XkdcComic {
+export class xkcdComic {
   month: string;
   num: number;
   link: string;
