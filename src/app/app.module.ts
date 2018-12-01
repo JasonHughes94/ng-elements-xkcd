@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
-import { xkcdRetrieverService } from './services/xkcd-retriever.service';
+import { XkcdRetrieverService } from './services/xkcd-retriever.service';
 
 
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
@@ -19,8 +19,9 @@ import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
     HttpClientJsonpModule
   ],
   providers: [
-    xkcdRetrieverService
+    XkcdRetrieverService
   ],
+  bootstrap: [AppComponent],
   entryComponents: [AppComponent]
 })
 

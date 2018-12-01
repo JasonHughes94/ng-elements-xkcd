@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { xkcdComic } from './models/xkcd-comic';
-import { xkcdRetrieverService } from './services/xkcd-retriever.service';
+import { XkcdComic } from './models/xkcd-comic';
+import { XkcdRetrieverService } from './services/xkcd-retriever.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,10 @@ import { xkcdRetrieverService } from './services/xkcd-retriever.service';
 export class AppComponent implements OnInit {
 
   @Input() comicNumber: string | undefined = '';
-  comic: xkcdComic;
+  comic: XkcdComic;
 
   constructor(
-    private xkcdComicRetriever: xkcdRetrieverService
+    private xkcdComicRetriever: XkcdRetrieverService
   ) { }
 
   ngOnInit(): void {
